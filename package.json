@@ -1,0 +1,40 @@
+{
+  "name": "h4sh",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "npx prisma generate",
+    "lint": "eslint",
+    "prepare": "husky",
+    "commit": "cz"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "next": "16.0.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "husky": "^9.1.7",
+    "prisma": "^6.1.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

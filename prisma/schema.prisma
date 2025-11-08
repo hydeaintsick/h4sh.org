@@ -1,0 +1,29 @@
+// Prisma schema for h4sh encrypted message storage
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider   = "mongodb"
+  url        = env("DATABASE_URL")
+  directUrl  = env("DATABASE_URL")
+}
+
+model HashMessage {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  hashId      String   @unique
+  ciphertext  String
+  iv          String
+  salt        String
+  createdAt   DateTime @default(now())
+  expiresAt   DateTime?
+  autoDestroyOnRead Boolean @default(false)
+}
+
+model MessageCounter {
+  id           String   @id @default("global") @map("_id")
+  totalCreated Int      @default(0)
+  updatedAt    DateTime @updatedAt
+}
+
